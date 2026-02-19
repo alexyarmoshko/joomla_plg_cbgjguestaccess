@@ -1,4 +1,4 @@
-# CB GroupJive Guest Access — Joomla System Plugin
+# Yak Shaver CB GJ Guest Access Limiter — Joomla System Plugin
 
 A Joomla 5 system plugin that enforces selective guest access to **Community Builder GroupJive** content.
 
@@ -59,7 +59,7 @@ The plugin uses an **allowlist**: only the `cbgroupjiveevents` plugin element is
 
 2. Install via **Joomla Administrator** > Extensions > Manage > Install > Upload Package File.
 
-3. In Plugin Manager, set the ordering of "System - CB GJ Guest Access" **above** the "System - Community Builder" plugin (CB's ordering + 10 or more).
+3. In Plugin Manager, set the ordering of "System - Yak Shaver CB GJ Guest Access Limiter" **above** the "System - Community Builder" plugin (CB's ordering + 10 or more).
 
 4. Enable the plugin.
 
@@ -68,6 +68,12 @@ The plugin uses an **allowlist**: only the `cbgroupjiveevents` plugin element is
 - Verify CB GroupJive Events > Settings > "Events Access" is set to **Public** (level 1).
 - Verify `plg_system_cbgjvisibility` is enabled.
 - Set the GroupJive tab access to "Registered" in CB > Tab Manager (companion step).
+
+## Joomla Update Server
+
+The file `plg_system_cbgjguestaccess.update.xml` is the update manifest for Joomla's built-in extension updater. Host it at a stable public URL and register that URL under **Extensions → Manage → Update Sites** to enable one-click updates from the Joomla back-end.
+
+The `make dist` target rebuilds the ZIP and automatically rewrites the version, download URL, and SHA256 checksum in the manifest, so the file stays accurate after every release.
 
 ## Status
 
