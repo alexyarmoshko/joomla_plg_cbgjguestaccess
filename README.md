@@ -77,4 +77,4 @@ The `make dist` target rebuilds the ZIP and automatically rewrites the version, 
 
 ## Status
 
-> **Implementation** — Plugin code complete. See [docs/execution_plan.md](docs/execution_plan.md) for the full plan and acceptance tests.
+> **Release** — `v1.0.0` released on 2026-02-19. See [docs/RELEASE.md](docs/RELEASE.md) for release notes.

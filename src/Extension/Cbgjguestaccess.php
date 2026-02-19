@@ -78,11 +78,13 @@ final class Cbgjguestaccess extends CMSPlugin implements SubscriberInterface
 
         // Joomla uses task and view interchangeably (communitybuilder.php:84).
         // Both can carry dotted values like 'pluginclass.someAction', so we
-        // split on '.' and take the first segment.
-        $task = explode('.', $input->get('task', ''), 2)[0]
-            ?: explode('.', $input->get('view', ''), 2)[0];
+        // split on '.' and take the first segment.  Check both parameters
+        // independently — if task is present but not 'pluginclass' while
+        // view IS 'pluginclass', the guard must still engage.
+        $taskSegment = explode('.', $input->get('task', ''), 2)[0];
+        $viewSegment = explode('.', $input->get('view', ''), 2)[0];
 
-        if ($task !== 'pluginclass') {
+        if ($taskSegment !== 'pluginclass' && $viewSegment !== 'pluginclass') {
             return;
         }
 

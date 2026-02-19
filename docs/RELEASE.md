@@ -1,6 +1,6 @@
 # Release Notes
 
-## v1.0.0 (unreleased)
+## v1.0.0 (2026-02-19)
 
 Initial release of `plg_system_cbgjguestaccess`.
 
