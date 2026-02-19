@@ -28,12 +28,47 @@ This plugin bridges that gap without modifying any CB or GroupJive core files.
 | **Events from non-private groups** | ✅ Allowed |
 | Events from private groups | ❌ Blocked (by GroupJive itself) |
 
+## How It Works
+
+This plugin is **Layer 1** of a two-plugin design:
+
+1. **`plg_system_cbgjguestaccess`** (this plugin) — subscribes to Joomla's `onAfterRoute` event and redirects guests to the CB login page when they visit any GroupJive URL except events.
+2. **`plg_system_cbgjvisibility`** (deployed separately) — strips group-identifying metadata (host name, group link, attendee count) from the rendered event page for guests.
+
+Both plugins must be enabled. Neither alone is sufficient.
+
+The plugin uses an **allowlist**: only the `cbgroupjiveevents` plugin element is permitted for guests. All other `cbgroupjive*` elements are redirected. Non-GroupJive CB plugins are not affected.
+
 ## Requirements
 
 - Joomla 5.x
+- PHP 8.1+
 - Community Builder 2.x
 - CB GroupJive plugin family (`cbgroupjive`, `cbgroupjiveevents`)
+- `plg_system_cbgjvisibility` (companion plugin, deployed separately)
+
+## Installation
+
+1. Build the ZIP package (Git Bash):
+
+   ```bash
+   make dist
+   ```
+
+   This creates `installation/plg_system_cbgjguestaccess-v1-0-0.zip` containing the plugin files and LICENSE. Use `make info` to inspect plugin metadata and `make clean` to remove the built ZIP.
+
+2. Install via **Joomla Administrator** > Extensions > Manage > Install > Upload Package File.
+
+3. In Plugin Manager, set the ordering of "System - CB GJ Guest Access" **above** the "System - Community Builder" plugin (CB's ordering + 10 or more).
+
+4. Enable the plugin.
+
+### Post-install verification
+
+- Verify CB GroupJive Events > Settings > "Events Access" is set to **Public** (level 1).
+- Verify `plg_system_cbgjvisibility` is enabled.
+- Set the GroupJive tab access to "Registered" in CB > Tab Manager (companion step).
 
 ## Status
 
-> **Planning** — See [docs/planning_spike.v1.md](docs/planning_spike.v1.md) for analysis and design notes.
+> **Implementation** — Plugin code complete. See [docs/execution_plan.md](docs/execution_plan.md) for the full plan and acceptance tests.
