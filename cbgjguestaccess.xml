@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>PLG_SYSTEM_CBGJGUESTACCESS</name>
+    <author>Yak Shaver</author>
+    <creationDate>2026-02-18</creationDate>
+    <copyright>(C) 2026 Yak Shaver https://www.kayakshaver.com</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>me@kayakshaver.com</authorEmail>
+    <authorUrl>https://www.kayakshaver.com</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_CBGJGUESTACCESS_XML_DESCRIPTION</description>
+    <namespace path="src">YakShaver\Plugin\System\Cbgjguestaccess</namespace>
+
+    <files>
+        <folder plugin="cbgjguestaccess">services</folder>
+        <folder>src</folder>
+        <filename>index.html</filename>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/plg_system_cbgjguestaccess.ini</language>
+        <language tag="en-GB">en-GB/plg_system_cbgjguestaccess.sys.ini</language>
+    </languages>
+</extension>
