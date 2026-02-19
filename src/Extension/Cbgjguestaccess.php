@@ -32,6 +32,12 @@ use Joomla\Event\SubscriberInterface;
 final class Cbgjguestaccess extends CMSPlugin implements SubscriberInterface
 {
     /**
+     * Load the plugin language file automatically so Text::_() keys resolve
+     * at runtime, not just in admin/install contexts (.sys.ini).
+     */
+    protected $autoloadLanguage = true;
+
+    /**
      * Allowlist of CB GroupJive plugin elements that guests may access.
      *
      * All other cbgroupjive* plugin elements are redirected to the CB login page.
@@ -98,7 +104,7 @@ final class Cbgjguestaccess extends CMSPlugin implements SubscriberInterface
         // We must NOT add B: in the URL — it would double-prefix and break the return.
         // urlencode() protects base64 '+' and '=' characters in the query string.
         // Route::_() second arg false disables XHTML &amp; escaping; routing still applies.
-        $return   = base64_encode(Uri::getInstance()->toString());
+        $return = base64_encode(Uri::getInstance()->toString());
         $loginUrl = Route::_(
             'index.php?option=com_comprofiler&view=login&return=' . urlencode($return),
             false
