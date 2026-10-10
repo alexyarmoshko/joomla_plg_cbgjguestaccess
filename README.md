@@ -49,7 +49,7 @@ The plugin uses an **allowlist**: only the `cbgroupjiveevents` plugin element is
 
 ## Installation
 
-1. Build the ZIP package (Git Bash):
+1. Build the ZIP package:
 
    ```bash
    make dist
