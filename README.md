@@ -53,7 +53,7 @@ The plugin uses an **allowlist**: only the `cbgroupjiveevents` plugin element is
 
 2. Install via **Joomla Administrator** > Extensions > Manage > Install > Upload Package File.
 
-3. In Plugin Manager, set the ordering of "System - Yak Shaver CB GJ Guest Access Limiter" **above** the "System - Community Builder" plugin (CB's ordering + 10 or more).
+3. In Plugin Manager, give "System - Yak Shaver CB GJ Guest Access Limiter" a **higher** ordering number than "System - Community Builder" (CB's ordering + 10 or more), so it runs after CB's own login and consent redirects.
 
 4. Enable the plugin.
 
@@ -107,4 +107,4 @@ Reproducibility starts with 1.0.1. Tag `1.0.0` was packaged by the old `zip`-bas
 
 ## Status
 
-> **Release** — `v1.0.0` released on 2026-02-19. See [docs/RELEASE.md](docs/RELEASE.md) for release notes.
+> **Release** — `1.0.1` released on 2026-10-10. It is the first version that receives updates through Joomla's updater; see [Updates](#updates). See [docs/RELEASE.md](docs/RELEASE.md) for release notes.
