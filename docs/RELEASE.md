@@ -1,6 +1,15 @@
 # Release Notes
 
-## v1.0.0 (2026-02-19)
+## 1.0.1 (2026-10-10)
+
+No change to the plugin's behaviour.
+
+### Changes
+
+- The manifest declares an update server, so Joomla's updater offers new versions from the `joomla_update_system` repository. Sites on 1.0.0 need to install 1.0.1 by hand once; later versions arrive through **System → Update → Extensions**.
+- The release package is reproducible: it is built from the git tag with a deterministic packager, so anyone can rebuild it and get the checksum the update descriptor publishes.
+
+## 1.0.0 (2026-02-19)
 
 Initial release of `plg_system_cbgjguestaccess`.
 
