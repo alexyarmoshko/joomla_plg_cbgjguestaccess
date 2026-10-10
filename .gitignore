@@ -3,10 +3,8 @@
 Thumbs.db
 installation/
 build/
-.vscode/
-.claude/
-.codex/
-.agent/
-AGENTS.md
-CLAUDE.md
-GEMINI.md
+vendor/
+node_modules/
+.phpunit.cache/
+coverage/
+.playwright-mcp/
